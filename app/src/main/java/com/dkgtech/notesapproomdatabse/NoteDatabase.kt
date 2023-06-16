@@ -19,7 +19,7 @@ abstract class NoteDatabase : RoomDatabase() {
                 DATABASE_INSTANCE = Room.databaseBuilder(
                     context.applicationContext, NoteDatabase::class.java,
                     DATABASE_NAME
-                ).build()
+                ).allowMainThreadQueries().build()
             }
 
             return DATABASE_INSTANCE!!
